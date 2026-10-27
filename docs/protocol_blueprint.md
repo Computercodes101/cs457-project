@@ -46,6 +46,10 @@
 		- 2-6: Winner's ships, as a full ship definition (assuming default 5 ships)
 		- 7: Looser's Player_ID
 		- 8-12: Looser's ships, as a full ship definition (assuming default 5 ships)
+	- `END` action
+- Error
+	- 2 fields for error id (1 byte) and error message (unspecified ASCII)
+	- `ERROR` action
 - No Payload
 	- `CONNECT`, `DISCONNECT` actions
 
