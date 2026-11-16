@@ -46,7 +46,7 @@ class Server:
             while True:
                 try:
                     data = connection.recv(4096)
-                except socket.timeout:
+                except TimeoutError:
                     continue
                 if not data:
                     break

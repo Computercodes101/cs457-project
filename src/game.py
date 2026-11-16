@@ -2,7 +2,6 @@ from enum import Enum
 
 from src.protocol import Action, Message, valid_coordinate
 
-
 FLEET = {1: 5, 2: 4, 3: 3, 4: 3, 5: 2}
 
 

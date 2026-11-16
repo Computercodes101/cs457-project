@@ -5,7 +5,7 @@ import threading
 import unittest
 from unittest.mock import patch
 
-import src.client as client
+from src import client
 from src.game import Game, State, fleet_cells
 from src.protocol import Action, Decoder, Message, ProtocolError, coordinate, encode
 from src.server import Server
