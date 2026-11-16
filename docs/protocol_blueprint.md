@@ -7,7 +7,7 @@
 **Framing Rule Requirement:** TCP is a continuous byte-stream protocol without built-in message boundaries. Multiple messages sent back-to-back may arrive in a single recv() chunk (coalescing), or a single message may be split across multiple chunks (fragmentation). Your protocol blueprint must explicitly define a deterministic framing rule to delimit message boundaries on the wire.
 
 
-**Framing Rule:** Message fields are separated by ASCII Hex `1E`, and every complete message is terminated with ASCII Hex `1F`. Any printable ASCII character can be used within a field.<br>
+**Framing Rule:** Message fields are separated by ASCII Hex `1E`, and every complete message is terminated with ASCII Hex `1F`. Any printable ASCII character can be used within a field. `0x1B` acts as an escape byte, allowing `0x1E` and `0x1F` in fields if needed. Only unescaped `0x1E` separates fields; only unescaped `0x1F` ends a message. Unescape before interpreting fields. Receivers retain partial messages across reads and decode multiple messages from one read. Messages exceeding 4096 wire bytes, unknown actions, invalid escapes, and invalid headers cause ERROR and connection closure.<br> 
 <sub>I've borrowed some of this from a joke protocol I made for a CSU DevNet project recently, called [TDLP](https://app.notion.com/p/TDLP-ToDo-List-Protocol-3f8c26680a4580d2b7a1d6146a9eae2b) (the basic format is [TLON](https://app.notion.com/p/TLON-3f8c26680a4580df8807f80b26a27c53))<sub>
 
 ### Schema Specification:

@@ -1,0 +1,249 @@
+﻿[SERVER] [FSM] INIT -> WAITING_FOR_PLAYERS
+[SERVER] Listening on 0.0.0.0:65131
+[CLIENT 1] Connected. Waiting for Player 2...
+[CLIENT 2] Connected. Waiting for Player 2...
+[CLIENT 1] Game 1: You are Player 1. Type quit to leave.
+[CLIENT 1] Ship 1 (length 5): enter start end (e.g. A1 E1):
+[CLIENT 2] Game 1: You are Player 2. Type quit to leave.
+[CLIENT 2] Ship 1 (length 5): enter start end (e.g. A1 E1):
+[CLIENT 1 INPUT] A1 E1
+[CLIENT 1] Ship 2 (length 4): enter start end (e.g. A1 E1):
+[CLIENT 1 INPUT] A2 D2
+[CLIENT 1] Ship 3 (length 3): enter start end (e.g. A1 E1):
+[CLIENT 1 INPUT] A3 C3
+[CLIENT 1] Ship 4 (length 3): enter start end (e.g. A1 E1):
+[CLIENT 1 INPUT] A4 C4
+[CLIENT 1] Ship 5 (length 2): enter start end (e.g. A1 E1):
+[CLIENT 1 INPUT] A5 B5
+[CLIENT 1] 
+[CLIENT 1]        YOUR FLEET                         YOUR SHOTS
+[CLIENT 1]     A B C D E F G H I J               A B C D E F G H I J
+[CLIENT 1]  1  S S S S S . . . . .           1  . . . . . . . . . .
+[CLIENT 1]  2  S S S S . . . . . .           2  . . . . . . . . . .
+[CLIENT 1]  3  S S S . . . . . . .           3  . . . . . . . . . .
+[CLIENT 1]  4  S S S . . . . . . .           4  . . . . . . . . . .
+[CLIENT 1]  5  S S . . . . . . . .           5  . . . . . . . . . .
+[CLIENT 1]  6  . . . . . . . . . .           6  . . . . . . . . . .
+[CLIENT 1]  7  . . . . . . . . . .           7  . . . . . . . . . .
+[CLIENT 1]  8  . . . . . . . . . .           8  . . . . . . . . . .
+[CLIENT 1]  9  . . . . . . . . . .           9  . . . . . . . . . .
+[CLIENT 1] 10  . . . . . . . . . .          10  . . . . . . . . . .
+[CLIENT 1] S = ship, X = hit, o = miss
+[CLIENT 1] Score: hits 0/17 | Your surviving cells: 17/17
+[CLIENT 1] Fleet submitted. Waiting for the other player's setup...
+[CLIENT 2 INPUT] A1 E1
+[CLIENT 2] Ship 2 (length 4): enter start end (e.g. A1 E1):
+[CLIENT 2 INPUT] A2 D2
+[CLIENT 2] Ship 3 (length 3): enter start end (e.g. A1 E1):
+[CLIENT 2 INPUT] A3 C3
+[CLIENT 2] Ship 4 (length 3): enter start end (e.g. A1 E1):
+[CLIENT 2 INPUT] A4 C4
+[CLIENT 2] Ship 5 (length 2): enter start end (e.g. A1 E1):
+[CLIENT 2 INPUT] A5 B5
+[CLIENT 2] 
+[CLIENT 2]        YOUR FLEET                         YOUR SHOTS
+[CLIENT 2]     A B C D E F G H I J               A B C D E F G H I J
+[CLIENT 2]  1  S S S S S . . . . .           1  . . . . . . . . . .
+[CLIENT 2]  2  S S S S . . . . . .           2  . . . . . . . . . .
+[CLIENT 2]  3  S S S . . . . . . .           3  . . . . . . . . . .
+[CLIENT 2]  4  S S S . . . . . . .           4  . . . . . . . . . .
+[CLIENT 2]  5  S S . . . . . . . .           5  . . . . . . . . . .
+[CLIENT 2]  6  . . . . . . . . . .           6  . . . . . . . . . .
+[CLIENT 2]  7  . . . . . . . . . .           7  . . . . . . . . . .
+[CLIENT 2]  8  . . . . . . . . . .           8  . . . . . . . . . .
+[CLIENT 2]  9  . . . . . . . . . .           9  . . . . . . . . . .
+[CLIENT 2] 10  . . . . . . . . . .          10  . . . . . . . . . .
+[CLIENT 2] S = ship, X = hit, o = miss
+[CLIENT 2] Score: hits 0/17 | Your surviving cells: 17/17
+[CLIENT 2] Fleet submitted. Waiting for the other player's setup...
+[CLIENT 1] 
+[CLIENT 1]        YOUR FLEET                         YOUR SHOTS
+[CLIENT 1]     A B C D E F G H I J               A B C D E F G H I J
+[CLIENT 1]  1  S S S S S . . . . .           1  . . . . . . . . . .
+[CLIENT 1]  2  S S S S . . . . . .           2  . . . . . . . . . .
+[CLIENT 1]  3  S S S . . . . . . .           3  . . . . . . . . . .
+[CLIENT 1]  4  S S S . . . . . . .           4  . . . . . . . . . .
+[CLIENT 1]  5  S S . . . . . . . .           5  . . . . . . . . . .
+[CLIENT 1]  6  . . . . . . . . . .           6  . . . . . . . . . .
+[CLIENT 1]  7  . . . . . . . . . .           7  . . . . . . . . . .
+[CLIENT 1]  8  . . . . . . . . . .           8  . . . . . . . . . .
+[CLIENT 1]  9  . . . . . . . . . .           9  . . . . . . . . . .
+[CLIENT 1] 10  . . . . . . . . . .          10  . . . . . . . . . .
+[CLIENT 1] S = ship, X = hit, o = miss
+[CLIENT 1] Score: hits 0/17 | Your surviving cells: 17/17
+[CLIENT 1] Your Turn: enter A1-J10:
+[CLIENT 2] 
+[CLIENT 2]        YOUR FLEET                         YOUR SHOTS
+[CLIENT 2]     A B C D E F G H I J               A B C D E F G H I J
+[CLIENT 2]  1  S S S S S . . . . .           1  . . . . . . . . . .
+[CLIENT 2]  2  S S S S . . . . . .           2  . . . . . . . . . .
+[CLIENT 2]  3  S S S . . . . . . .           3  . . . . . . . . . .
+[CLIENT 2]  4  S S S . . . . . . .           4  . . . . . . . . . .
+[CLIENT 2]  5  S S . . . . . . . .           5  . . . . . . . . . .
+[CLIENT 2]  6  . . . . . . . . . .           6  . . . . . . . . . .
+[CLIENT 2]  7  . . . . . . . . . .           7  . . . . . . . . . .
+[CLIENT 2]  8  . . . . . . . . . .           8  . . . . . . . . . .
+[CLIENT 2]  9  . . . . . . . . . .           9  . . . . . . . . . .
+[CLIENT 2] 10  . . . . . . . . . .          10  . . . . . . . . . .
+[CLIENT 2] S = ship, X = hit, o = miss
+[CLIENT 2] Score: hits 0/17 | Your surviving cells: 17/17
+[CLIENT 2] Waiting for Player 1...
+[CLIENT 1 INPUT] A1
+[CLIENT 1] Player 1 fired at A1: HIT
+[CLIENT 1] 
+[CLIENT 1]        YOUR FLEET                         YOUR SHOTS
+[CLIENT 1]     A B C D E F G H I J               A B C D E F G H I J
+[CLIENT 1]  1  S S S S S . . . . .           1  X . . . . . . . . .
+[CLIENT 1]  2  S S S S . . . . . .           2  . . . . . . . . . .
+[CLIENT 1]  3  S S S . . . . . . .           3  . . . . . . . . . .
+[CLIENT 1]  4  S S S . . . . . . .           4  . . . . . . . . . .
+[CLIENT 1]  5  S S . . . . . . . .           5  . . . . . . . . . .
+[CLIENT 1]  6  . . . . . . . . . .           6  . . . . . . . . . .
+[CLIENT 1]  7  . . . . . . . . . .           7  . . . . . . . . . .
+[CLIENT 1]  8  . . . . . . . . . .           8  . . . . . . . . . .
+[CLIENT 1]  9  . . . . . . . . . .           9  . . . . . . . . . .
+[CLIENT 1] 10  . . . . . . . . . .          10  . . . . . . . . . .
+[CLIENT 1] S = ship, X = hit, o = miss
+[CLIENT 1] Score: hits 1/17 | Your surviving cells: 17/17
+[CLIENT 1] Waiting for Player 2...
+[CLIENT 2] Player 1 fired at A1: HIT
+[CLIENT 2] 
+[CLIENT 2]        YOUR FLEET                         YOUR SHOTS
+[CLIENT 2]     A B C D E F G H I J               A B C D E F G H I J
+[CLIENT 2]  1  X S S S S . . . . .           1  . . . . . . . . . .
+[CLIENT 2]  2  S S S S . . . . . .           2  . . . . . . . . . .
+[CLIENT 2]  3  S S S . . . . . . .           3  . . . . . . . . . .
+[CLIENT 2]  4  S S S . . . . . . .           4  . . . . . . . . . .
+[CLIENT 2]  5  S S . . . . . . . .           5  . . . . . . . . . .
+[CLIENT 2]  6  . . . . . . . . . .           6  . . . . . . . . . .
+[CLIENT 2]  7  . . . . . . . . . .           7  . . . . . . . . . .
+[CLIENT 2]  8  . . . . . . . . . .           8  . . . . . . . . . .
+[CLIENT 2]  9  . . . . . . . . . .           9  . . . . . . . . . .
+[CLIENT 2] 10  . . . . . . . . . .          10  . . . . . . . . . .
+[CLIENT 2] S = ship, X = hit, o = miss
+[CLIENT 2] Score: hits 0/17 | Your surviving cells: 16/17
+[CLIENT 2] Your Turn: enter A1-J10:
+[CLIENT 2 INPUT] J10
+[CLIENT 2] Player 2 fired at J10: MISS
+[CLIENT 2] 
+[CLIENT 2]        YOUR FLEET                         YOUR SHOTS
+[CLIENT 2]     A B C D E F G H I J               A B C D E F G H I J
+[CLIENT 2]  1  X S S S S . . . . .           1  . . . . . . . . . .
+[CLIENT 2]  2  S S S S . . . . . .           2  . . . . . . . . . .
+[CLIENT 2]  3  S S S . . . . . . .           3  . . . . . . . . . .
+[CLIENT 2]  4  S S S . . . . . . .           4  . . . . . . . . . .
+[CLIENT 2]  5  S S . . . . . . . .           5  . . . . . . . . . .
+[CLIENT 2]  6  . . . . . . . . . .           6  . . . . . . . . . .
+[CLIENT 2]  7  . . . . . . . . . .           7  . . . . . . . . . .
+[CLIENT 2]  8  . . . . . . . . . .           8  . . . . . . . . . .
+[CLIENT 2]  9  . . . . . . . . . .           9  . . . . . . . . . .
+[CLIENT 2] 10  . . . . . . . . . .          10  . . . . . . . . . o
+[CLIENT 2] S = ship, X = hit, o = miss
+[CLIENT 2] Score: hits 0/17 | Your surviving cells: 16/17
+[CLIENT 2] Waiting for Player 1...
+[CLIENT 1] Player 2 fired at J10: MISS
+[CLIENT 1] 
+[CLIENT 1]        YOUR FLEET                         YOUR SHOTS
+[CLIENT 1]     A B C D E F G H I J               A B C D E F G H I J
+[CLIENT 1]  1  S S S S S . . . . .           1  X . . . . . . . . .
+[CLIENT 1]  2  S S S S . . . . . .           2  . . . . . . . . . .
+[CLIENT 1]  3  S S S . . . . . . .           3  . . . . . . . . . .
+[CLIENT 1]  4  S S S . . . . . . .           4  . . . . . . . . . .
+[CLIENT 1]  5  S S . . . . . . . .           5  . . . . . . . . . .
+[CLIENT 1]  6  . . . . . . . . . .           6  . . . . . . . . . .
+[CLIENT 1]  7  . . . . . . . . . .           7  . . . . . . . . . .
+[CLIENT 1]  8  . . . . . . . . . .           8  . . . . . . . . . .
+[CLIENT 1]  9  . . . . . . . . . .           9  . . . . . . . . . .
+[CLIENT 1] 10  . . . . . . . . . o          10  . . . . . . . . . .
+[CLIENT 1] S = ship, X = hit, o = miss
+[CLIENT 1] Score: hits 1/17 | Your surviving cells: 17/17
+[CLIENT 1] Your Turn: enter A1-J10:
+[CLIENT 1 INPUT] J10
+[CLIENT 1] Player 1 fired at J10: MISS
+[CLIENT 1] 
+[CLIENT 1]        YOUR FLEET                         YOUR SHOTS
+[CLIENT 1]     A B C D E F G H I J               A B C D E F G H I J
+[CLIENT 1]  1  S S S S S . . . . .           1  X . . . . . . . . .
+[CLIENT 1]  2  S S S S . . . . . .           2  . . . . . . . . . .
+[CLIENT 1]  3  S S S . . . . . . .           3  . . . . . . . . . .
+[CLIENT 1]  4  S S S . . . . . . .           4  . . . . . . . . . .
+[CLIENT 1]  5  S S . . . . . . . .           5  . . . . . . . . . .
+[CLIENT 1]  6  . . . . . . . . . .           6  . . . . . . . . . .
+[CLIENT 1]  7  . . . . . . . . . .           7  . . . . . . . . . .
+[CLIENT 1]  8  . . . . . . . . . .           8  . . . . . . . . . .
+[CLIENT 1]  9  . . . . . . . . . .           9  . . . . . . . . . .
+[CLIENT 1] 10  . . . . . . . . . o          10  . . . . . . . . . o
+[CLIENT 1] S = ship, X = hit, o = miss
+[CLIENT 1] Score: hits 1/17 | Your surviving cells: 17/17
+[CLIENT 1] Waiting for Player 2...
+[CLIENT 2] Player 1 fired at J10: MISS
+[CLIENT 2] 
+[CLIENT 2]        YOUR FLEET                         YOUR SHOTS
+[CLIENT 2]     A B C D E F G H I J               A B C D E F G H I J
+[CLIENT 2]  1  X S S S S . . . . .           1  . . . . . . . . . .
+[CLIENT 2]  2  S S S S . . . . . .           2  . . . . . . . . . .
+[CLIENT 2]  3  S S S . . . . . . .           3  . . . . . . . . . .
+[CLIENT 2]  4  S S S . . . . . . .           4  . . . . . . . . . .
+[CLIENT 2]  5  S S . . . . . . . .           5  . . . . . . . . . .
+[CLIENT 2]  6  . . . . . . . . . .           6  . . . . . . . . . .
+[CLIENT 2]  7  . . . . . . . . . .           7  . . . . . . . . . .
+[CLIENT 2]  8  . . . . . . . . . .           8  . . . . . . . . . .
+[CLIENT 2]  9  . . . . . . . . . .           9  . . . . . . . . . .
+[CLIENT 2] 10  . . . . . . . . . o          10  . . . . . . . . . o
+[CLIENT 2] S = ship, X = hit, o = miss
+[CLIENT 2] Score: hits 0/17 | Your surviving cells: 16/17
+[CLIENT 2] Your Turn: enter A1-J10:
+[CLIENT 2 INPUT] A1
+[CLIENT 2] Player 2 fired at A1: HIT
+[CLIENT 2] 
+[CLIENT 2]        YOUR FLEET                         YOUR SHOTS
+[CLIENT 2]     A B C D E F G H I J               A B C D E F G H I J
+[CLIENT 2]  1  X S S S S . . . . .           1  X . . . . . . . . .
+[CLIENT 2]  2  S S S S . . . . . .           2  . . . . . . . . . .
+[CLIENT 2]  3  S S S . . . . . . .           3  . . . . . . . . . .
+[CLIENT 2]  4  S S S . . . . . . .           4  . . . . . . . . . .
+[CLIENT 2]  5  S S . . . . . . . .           5  . . . . . . . . . .
+[CLIENT 2]  6  . . . . . . . . . .           6  . . . . . . . . . .
+[CLIENT 2]  7  . . . . . . . . . .           7  . . . . . . . . . .
+[CLIENT 2]  8  . . . . . . . . . .           8  . . . . . . . . . .
+[CLIENT 2]  9  . . . . . . . . . .           9  . . . . . . . . . .
+[CLIENT 2] 10  . . . . . . . . . o          10  . . . . . . . . . o
+[CLIENT 2] S = ship, X = hit, o = miss
+[CLIENT 2] Score: hits 1/17 | Your surviving cells: 16/17
+[CLIENT 2] Waiting for Player 1...
+[CLIENT 1] Player 2 fired at A1: HIT
+[CLIENT 1] 
+[CLIENT 1]        YOUR FLEET                         YOUR SHOTS
+[CLIENT 1]     A B C D E F G H I J               A B C D E F G H I J
+[CLIENT 1]  1  X S S S S . . . . .           1  X . . . . . . . . .
+[CLIENT 1]  2  S S S S . . . . . .           2  . . . . . . . . . .
+[CLIENT 1]  3  S S S . . . . . . .           3  . . . . . . . . . .
+[CLIENT 1]  4  S S S . . . . . . .           4  . . . . . . . . . .
+[CLIENT 1]  5  S S . . . . . . . .           5  . . . . . . . . . .
+[CLIENT 1]  6  . . . . . . . . . .           6  . . . . . . . . . .
+[CLIENT 1]  7  . . . . . . . . . .           7  . . . . . . . . . .
+[CLIENT 1]  8  . . . . . . . . . .           8  . . . . . . . . . .
+[CLIENT 1]  9  . . . . . . . . . .           9  . . . . . . . . . .
+[CLIENT 1] 10  . . . . . . . . . o          10  . . . . . . . . . o
+[CLIENT 1] S = ship, X = hit, o = miss
+[CLIENT 1] Score: hits 1/17 | Your surviving cells: 16/17
+[CLIENT 1] Your Turn: enter A1-J10:
+[DEMO] Four turns completed; both clients received every result.
+[CLIENT 1 INPUT] quit
+[CLIENT 2] [ERROR] Opponent disconnected; game aborted
+[SERVER] [CONNECT] ('127.0.0.1', 65132)
+[SERVER] [CONNECT] ('127.0.0.1', 65133)
+[SERVER] [FSM] WAITING_FOR_PLAYERS -> GAME_START
+[SERVER] [FSM] GAME_START -> WAITING_FOR_SETUP
+[SERVER] [FSM] WAITING_FOR_SETUP -> PLAYER_TURN
+[SERVER] [FSM] PLAYER_TURN -> EVALUATE_GUESS
+[SERVER] [FSM] EVALUATE_GUESS -> PLAYER_TURN
+[SERVER] [FSM] PLAYER_TURN -> EVALUATE_GUESS
+[SERVER] [FSM] EVALUATE_GUESS -> PLAYER_TURN
+[SERVER] [FSM] PLAYER_TURN -> EVALUATE_GUESS
+[SERVER] [FSM] EVALUATE_GUESS -> PLAYER_TURN
+[SERVER] [FSM] PLAYER_TURN -> EVALUATE_GUESS
+[SERVER] [FSM] EVALUATE_GUESS -> PLAYER_TURN
+[SERVER] [FSM] PLAYER_TURN -> CLEANUP
+[SERVER] [FSM] INIT -> WAITING_FOR_PLAYERS
+[DEMO] Disconnect cleanup verified; server ready for another game.
