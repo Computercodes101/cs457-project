@@ -1,0 +1,316 @@
+annotations: []
+smart_annotations: []
+nodes:
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          hostname R1
+
+          ! Enable IPv4 unicast routing across router interfaces:
+          ip routing
+
+          ! Configure Gi0/1 as the Default Gateway for Subnet A (Client 1):
+          interface GigabitEthernet0/1
+           ip address 192.168.10.1 255.255.255.0
+           no shutdown
+           exit
+
+          ! Configure Gi0/2 as the Default Gateway for Subnet B (Client 2):
+          interface GigabitEthernet0/2
+           ip address 192.168.11.1 255.255.255.0
+           no shutdown
+           exit
+
+          ! Configure Gi0/3 as the Default Gateway for Subnet C (Game Server):
+          interface GigabitEthernet0/3
+           ip address 192.168.20.1 255.255.255.0
+           no shutdown
+           exit
+
+          ! Exclude router gateway IP addresses so R1 never assigns them to a client
+          ip dhcp excluded-address 192.168.10.1
+          ip dhcp excluded-address 192.168.11.1
+
+          ! DHCP Pool for Client 1 (Subnet A - 192.168.10.0/24)
+          ip dhcp pool CLIENT1_POOL
+           network 192.168.10.0 255.255.255.0
+           default-router 192.168.10.1
+           dns-server 192.168.10.1
+           exit
+
+          ! DHCP Pool for Client 2 (Subnet B - 192.168.11.0/24)
+          ip dhcp pool CLIENT2_POOL
+           network 192.168.11.0 255.255.255.0
+           default-router 192.168.11.1
+           dns-server 192.168.11.1
+           exit
+
+          ! Enable the Cisco IOS DNS server responder on UDP/TCP port 53:
+          ip domain lookup
+          ip dns server
+
+          ! Add a static Authoritative A-Record mapping your server FQDN to 192.168.20.100:
+          ! (Replace [yourlastname] with your actual last name, e.g., server.smith.edu)
+          ip host server.kispert.edu 192.168.20.100
+
+          ! Configure Gi0/0 (connected to External Connector) via DHCP as NAT outside:
+          interface GigabitEthernet0/0
+           ip address dhcp
+           ip nat outside
+           no shutdown
+           exit
+
+          ! Mark internal LAN interfaces as NAT inside:
+          interface GigabitEthernet0/1
+           ip nat inside
+           exit
+
+          interface GigabitEthernet0/2
+           ip nat inside
+           exit
+
+          interface GigabitEthernet0/3
+           ip nat inside
+           exit
+
+          ! Permit all three internal subnets for NAT overload (PAT) out Gi0/0:
+          access-list 1 permit 192.168.10.0 0.0.0.255
+          access-list 1 permit 192.168.11.0 0.0.0.255
+          access-list 1 permit 192.168.20.0 0.0.0.255
+          ip nat inside source list 1 interface GigabitEthernet0/0 overload
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: RK-R1
+    node_definition: iosv
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: 0
+    y: 0
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: GigabitEthernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: GigabitEthernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: GigabitEthernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+  - boot_disk_size: null
+    configuration:
+      - name: node.cfg
+        content: |-
+          # this is a shell script which will be sourced at boot
+          hostname Client1
+          # configurable user account
+          USERNAME=cisco
+          PASSWORD=cisco
+
+          # On Client 1 and Client 2 Consoles (Alpine Linux):
+          ip link set eth0 up
+          udhcpc -i eth0
+
+          # Install git on Alpine Linux (after Section 2.5 External Connector & R1 NAT are configured):
+          apk update
+          apk add git
+          sync   # Flush disk writes so installed packages and files persist
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: RK-Client 1
+    node_definition: alpine
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: -160
+    y: 120
+    interfaces:
+      - id: i0
+        label: eth0
+        mac_address: null
+        type: physical
+        slot: 0
+  - boot_disk_size: null
+    configuration:
+      - name: node.cfg
+        content: |-
+          # this is a shell script which will be sourced at boot
+          hostname GameServer
+          # configurable user account
+          USERNAME=cisco
+          PASSWORD=cisco
+
+          # On Game Server Node Console (Alpine or Ubuntu Linux):
+          ip addr add 192.168.20.100/24 dev eth0
+          ip link set eth0 up
+          ip route add default via 192.168.20.1
+          echo "nameserver 192.168.20.1" | tee /etc/resolv.conf
+
+          # Install git on Alpine Linux (after Section 2.5 External Connector & R1 NAT are configured):
+          apk update
+          apk add git
+          sync   # Flush disk writes so installed packages and files persist
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: RK-Game Server
+    node_definition: alpine
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: 160
+    y: 120
+    interfaces:
+      - id: i0
+        label: eth0
+        mac_address: null
+        type: physical
+        slot: 0
+  - boot_disk_size: null
+    configuration:
+      - name: node.cfg
+        content: |-
+          # this is a shell script which will be sourced at boot
+          hostname Client2
+          # configurable user account
+          USERNAME=cisco
+          PASSWORD=cisco
+
+          # On Client 1 and Client 2 Consoles (Alpine Linux):
+          ip link set eth0 up
+          udhcpc -i eth0
+
+          # Install git on Alpine Linux (after Section 2.5 External Connector & R1 NAT are configured):
+          apk update
+          apk add git
+          sync   # Flush disk writes so installed packages and files persist
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n3
+    image_definition: null
+    label: RK-Client 2
+    node_definition: alpine
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: 0
+    y: 160
+    interfaces:
+      - id: i0
+        label: eth0
+        mac_address: null
+        type: physical
+        slot: 0
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n4
+    image_definition: null
+    label: ext-conn-0
+    node_definition: external_connector
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: 0
+    y: -120
+    interfaces:
+      - id: i0
+        label: port
+        mac_address: null
+        type: physical
+        slot: 0
+links:
+  - id: l0
+    n1: n4
+    n2: n0
+    i1: i0
+    i2: i1
+    conditioning: {}
+    label: ext-conn-0-port<->R1-GigabitEthernet0/0
+  - id: l1
+    n1: n1
+    n2: n0
+    i1: i0
+    i2: i2
+    conditioning: {}
+    label: Client 1-eth0<->R1-GigabitEthernet0/1
+  - id: l2
+    n1: n3
+    n2: n0
+    i1: i0
+    i2: i3
+    conditioning: {}
+    label: Client 2-eth0<->R1-GigabitEthernet0/2
+  - id: l3
+    n1: n2
+    n2: n0
+    i1: i0
+    i2: i4
+    conditioning: {}
+    label: Game Server-eth0<->R1-GigabitEthernet0/3
+lab:
+  description: ''
+  notes: ''
+  title: Final Project Network
+  node_staging:
+    enabled: false
+    start_remaining: true
+    abort_on_failure: false
+  version: 0.3.1
